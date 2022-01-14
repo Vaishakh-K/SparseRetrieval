@@ -1,6 +1,8 @@
 '''
 The learned MLP is used to get the contextualized term weights
 The MSMARCO is rewritten with this weight so that it can be fed into anserini for index and search
+
+Reference: https://github.com/luyug/COIL/blob/main/uniCOIL/doc_emb_to_jsonl.py
 '''
 import argparse
 import json

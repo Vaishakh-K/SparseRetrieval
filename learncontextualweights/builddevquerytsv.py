@@ -1,6 +1,8 @@
 '''
 The learned MLP is used to get the term weights for the dev query
 The updated dev query is constructed
+
+Reference: https://github.com/luyug/COIL/blob/main/uniCOIL/query_emb_to_tsv.py
 '''
 import argparse
 import pickle
