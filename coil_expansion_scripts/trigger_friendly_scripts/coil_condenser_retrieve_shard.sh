@@ -5,7 +5,7 @@
 #SBATCH -n 16 # Nr of cores
 #SBATCH --mem 64000 # memory
 
-cd /home/adityasv/COILv2/COIL-vkeshava/COIL
+cd /home/adityasv/COILv2/SparseRetrieval/COIL
 
 MODEL_DIR=$1
 QUERY_DIR=${MODEL_DIR}/msmarco-query-encoding/embeddings_coil_condenser_query_reformat

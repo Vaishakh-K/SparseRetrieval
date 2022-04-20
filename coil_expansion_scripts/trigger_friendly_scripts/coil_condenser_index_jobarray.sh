@@ -6,7 +6,7 @@
 #SBATCH --mem 64G # memory
 #SBATCH -p cpu
 
-cd /home/adityasv/COILv2/COIL-vkeshava/COIL
+cd /home/adityasv/COILv2/SparseRetrieval/COIL
 
 MODEL_DIR=$1
 N_SHARDS=100

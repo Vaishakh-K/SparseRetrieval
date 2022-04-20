@@ -8,7 +8,7 @@
 #SBATCH -p gpu
 #SBATCH --gres=gpu:4
 
-cd /home/adityasv/COILv2/COIL-vkeshava/COIL
+cd /home/adityasv/COILv2/SparseRetrieval/COIL
 
 TRAIN=/bos/tmp16/vkeshava/coil/data/psg-train/ # WITHOUT DOC2QUERY
 OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/model_coil_with_expansion

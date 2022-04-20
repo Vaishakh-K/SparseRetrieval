@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=train-coil_condenser
-#SBATCH --output=/home/adityasv/COILv2/COIL-vkeshava/train_logs/%x-%j.out
+#SBATCH --output=/home/adityasv/COILv2/SparseRetrieval/train_logs/%x-%j.out
 #SBATCH -N 1 # Same machine
 #SBATCH -n 16 # Nr of cores
 #SBATCH --mem 32000 # memory
@@ -9,11 +9,11 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mail-user=adityasv@andrew.cmu.edu
 
-cd /home/adityasv/COILv2/COIL-vkeshava/COIL
+cd /home/adityasv/COILv2/SparseRetrieval/COIL
 
 TRAIN=/bos/tmp16/vkeshava/coil/data/psg-train/ # WITHOUT DOC2QUERY
-# OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/debug
-OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/model_coil_with_expansion_cls_flops_q0.0008_d0.0006_expansion_weight1_tokens_weight1_expansion-norm_cls_expansion_weight_not_learned_init_distilbert_base
+OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/debug
+# OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/model_coil_with_expansion_cls_flops_q0.0008_d0.0006_expansion_weight1_tokens_weight1_expansion-norm_cls_expansion_weight_not_learned_init_distilbert_base
 
 # TRAIN=/bos/tmp3/vkeshava/data/psg-train-d2q # WITH DOC2QUERY
 # OUTPUT=/bos/tmp15/adityasv/COILv2-vkeshava/model_coil_with_expansion_splade_flops_d2q
@@ -24,7 +24,6 @@ export NCCL_IB_DISABLE=1
 MASTER_PORT=12345
 
 echo $OUTPUT
-  # --model_name_or_path /home/adityasv/COILv2/COIL-vkeshava/checkpoints/distilsplade-max \
 
 # python run_marco.py \
 python -m torch.distributed.launch --nproc_per_node=1 --master_port=$MASTER_PORT run_marco.py \
